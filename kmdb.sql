@@ -153,7 +153,7 @@ VALUES
 ("The Dark Knight Rises", 2012, "PG-13", 1);
 
 INSERT INTO studios (name)
-VALUES ("Warner Bros");
+VALUES ("Warner Bros.");
 
 INSERT INTO actors (name)
 VALUES ("Christian Bale"), 
@@ -191,15 +191,14 @@ VALUES ("Bruce Wayne", 1, 1),
 .print ""
 
 -- The SQL statement for the movies output
-SELECT movies.title, movies.year_released, movies.mdaa_rating, studios.name FROM movies INNER JOIN studios ON movies.studio_id = studios.id;
-
+SELECT movies.title, movies.year_released, movies.mdaa_rating, studios.name 
+FROM movies INNER JOIN studios ON movies.studio_id = studios.id;
 
 -- Prints a header for the cast output
 .print ""
 .print "Top Cast"
 .print "========"
 .print ""
-
 
 -- The SQL statement for the cast output
 SELECT movies.title, actors.name, starrings.character_name 
